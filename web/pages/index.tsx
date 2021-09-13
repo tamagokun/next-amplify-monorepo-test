@@ -1,5 +1,17 @@
 import React from "react";
 
-export default function Index() {
-  return <div>Hello World</div>;
+type Props = {
+  name: string;
+};
+
+export default function Index({ name }: Props) {
+  return <div>Hello {name}</div>;
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      name: "Bob",
+    },
+  };
 }
