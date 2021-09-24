@@ -8,7 +8,7 @@ export default function Index({ name }: Props) {
   return <div>Hello {name}</div>;
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   return {
     props: {
       name: "Bob",
