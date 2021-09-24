@@ -5,12 +5,13 @@ type Props = {
 };
 
 export default function Index({ title }: Props) {
-  return <div>Hello {name}</div>;
+  return <div>Hello {title}</div>;
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
   return {
     props: {
+      id: params.id,
       title: "Post Title",
     },
     revalidate: 60,
